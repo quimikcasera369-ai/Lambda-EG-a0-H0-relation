@@ -1,0 +1,716 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\title{The $a_0$--$H_0$ relation in $\Lambda$-EG:\\
+a consistency test and its distance-ladder circularity}
+
+\author{J.\,P.\,Figueroa Torres\\
+\small Independent Researcher --- ORCID: 0009-0005-5297-8777}
+
+\date{August 2026 --- v2}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Lambda Emergent Gravity ($\Lambda$-EG) framework fixes two acceleration
+scales in a rigid geometric relation: the screening scale $g_{\rm crit} =
+cH_0/(4\pi^2\sqrt{3})$ derived from de Sitter spectral geometry [Figueroa
+Torres 2026], and the MOND acceleration $a_0 = 4\pi\, g_{\rm crit}$ derived from
+the AQUAL embedding [Figueroa Torres 2026b, \S4]. We write out the immediate
+cosmological consequence of these two identities, previously distributed
+across companion papers but never stated explicitly: $H_0 = \pi\sqrt{3}\,
+a_0/c$. Substituting the SPARC-canonical $a_0 = (1.20 \pm 0.02_{\rm stat}
+\pm 0.24_{\rm sys})\times 10^{-10}\,\rm m\,s^{-2}$ yields $H_0 = 67.2$
+km\,s$^{-1}$\,Mpc$^{-1}$, within $0.3\%$ of the Planck 2018 CMB central
+value. We then show --- and this is the main cautionary result of the letter
+--- that this agreement cannot at present be read as an independent
+determination: between $55\%$ and $74\%$ of the standard SPARC sample
+(depending on how cluster-assigned distances are counted) carries distances
+computed under an assumed $H_0 = 73$ km\,s$^{-1}$\,Mpc$^{-1}$, and because
+$a_0 \propto D^{-2}$ these propagate into $a_0$ with sample-weighted
+sensitivity $\mathrm{d}\ln a_0/\mathrm{d}\ln H_0 = 1.1$--$1.5$, exceeding
+unity and comparable to the tension being probed. Imposing the relation and
+the calibration simultaneously yields a loop that is singular at
+$H_0 \simeq 72$ and therefore determines no value of $H_0$ at all. We
+present the relation as a consistency condition, quantify the coupling
+explicitly, and identify the clean route: the $33$ SPARC galaxies with
+individually measured redshift-independent distances.
+We then observe that the companion
+observable $\sigma_\Phi(z)$, the intrinsic scatter of the baryonic Tully--Fisher
+relation across redshift, measures the shape $E(z) \equiv H(z)/H_0$
+independently of $H_0$ itself, since $\sigma_\Phi(z)/\sigma_\Phi(0) =
+E(z)^{\beta'(0)}$ [Figueroa Torres 2026b, \S4 and Appendix A.11]. The two
+observables are informationally orthogonal: $a_0$ carries the scale, $\sigma_\Phi$
+carries the shape. Combined, they reconstruct $H(z) = H_0\, E(z)$ from galactic
+dynamics alone, using neither the CMB nor a distance ladder. We register
+predictions before ELT/JWST-IFU deployment. All algebraic results follow from
+previously published derivations; the new content is their combination and
+its empirical evaluation.
+\end{abstract}
+
+\medskip\noindent\textbf{Keywords:} Hubble tension; MOND; emergent gravity;
+baryonic Tully--Fisher relation; distance-ladder systematics
+
+\section{Introduction}
+
+The Hubble tension --- the persistent, now $\gtrsim 5\sigma$ discrepancy
+between the value of $H_0$ inferred from the cosmic microwave background
+under $\Lambda$CDM [Planck Collaboration 2020] and the value measured
+directly through the Cepheid--supernova distance ladder [Riess et al. 2024]
+--- has grown rather than shrunk with each generation of data. JWST
+observations of the Cepheid rungs have ruled out crowding and dust as the
+primary systematic in the local rung [Riess et al. 2024], and the two
+determinations remain approximately $6$ km\,s$^{-1}$\,Mpc$^{-1}$ apart. The
+tension therefore now motivates either an unrecognized systematic in one of
+the two anchors, or a modification of the cosmological model between the
+recombination epoch and today.
+
+A third measurement path, independent of both anchors, would clarify which
+possibility to take seriously. This letter identifies such a path within
+$\Lambda$-EG, using observables that live entirely on galactic scales and
+therefore share no calibration systematic with either the CMB or the distance
+ladder. The path splits naturally into two orthogonal components: a
+present-epoch determination of $H_0$ from the MOND acceleration scale $a_0$,
+and a redshift-evolution determination of the shape $E(z) = H(z)/H_0$ from
+the intrinsic scatter of the baryonic Tully--Fisher relation (BTFR). Neither
+is new mathematics: the ingredients have all been derived and published in
+the two companion papers [Figueroa Torres 2026, 2026b]. What is new is their
+explicit combination, and its empirical evaluation.
+
+We are honest at the outset about the strength of the present claim. The
+determination of $H_0$ from $a_0$ is currently limited by the $\sim 20\%$
+systematic on $a_0$ from stellar-mass modelling and inclination corrections
+in SPARC [Lelli, McGaugh \& Schombert 2016]; the resulting band on $H_0$ is
+wide enough to encompass both Planck and SH0ES. It is further limited, as we
+show in \S4, by the fact that a majority of the SPARC distances are
+themselves computed under an assumed $H_0$, so that the present-epoch channel
+is not yet ladder-independent in the strict sense. What $\Lambda$-EG delivers
+today is therefore neither a statistical arbitration of the tension nor a
+fully independent third measurement, but a structural relation between two
+acceleration scales that is testable, a quantified account of the
+circularity that currently limits it, and a program to remove that
+circularity through improved $a_0$ constraints and through ELT/JWST-IFU
+measurements of $\sigma_\Phi(z)$. The second channel, $\sigma_\Phi(z)$, is
+immune to the problem: being a ratio, it is independent of $H_0$ by
+construction.
+
+\section{The $a_0$--$H_0$ relation}
+
+$\Lambda$-EG postulates two acceleration scales that are related by a fixed
+geometric factor. The screening scale $g_{\rm crit}$ was derived in the
+framework paper from de Sitter spectral geometry as
+\begin{equation}
+g_{\rm crit} \;=\; \frac{c H_0}{4\pi^2 \sqrt{3}}
+\;\approx\; 9.58 \times 10^{-12}\ {\rm m\,s^{-2}},
+\qquad H_0 = 67.4\,{\rm km\,s^{-1}\,Mpc^{-1}},
+\label{eq:gcrit}
+\end{equation}
+[Figueroa Torres 2026, \S3]. The AQUAL embedding [Bekenstein \& Milgrom 1984]
+of the same framework then fixes the deep-MOND acceleration scale $a_0$ that
+enters the interpolating-function argument $x = g/a_0$ as
+\begin{equation}
+a_0 \;=\; 4\pi\, g_{\rm crit},
+\label{eq:o6}
+\end{equation}
+where the factor $4\pi$ is the solid-angle weight of the Gauss-theorem flux
+integration over a closed surface enclosing a spherically symmetric baryonic
+source in the deep-MOND regime [Figueroa Torres 2026b, \S4]. Substituting
+(\ref{eq:gcrit}) into (\ref{eq:o6}) and solving for $H_0$:
+\begin{equation}
+\boxed{\; H_0 \;=\; \frac{\pi \sqrt{3}\, a_0}{c} \;}
+\label{eq:law}
+\end{equation}
+The prefactor $\pi\sqrt{3} \simeq 5.4414$ is a pure geometric constant. The
+$\sqrt{3}$ is the square root of the spectral gap of the Laplacian on the
+$S^3$ sections of de Sitter, $\lambda_1(S^3) = 3$, which the framework paper
+takes as the primary origin of the factor [Figueroa Torres 2026, \S4.4]. The
+identity $\lambda_1(S^D) = D$ makes the count independent of $D$ across
+round spheres, and the framework argues separately that the same $\sqrt{D}$
+follows from counting $D$ isotropic decoherence channels, which does not
+presuppose a spherical section. We avoid the stronger phrasing
+``topology-independent'': $\lambda_1 = D$ is a property of constant-positive-curvature
+space forms, not of arbitrary topologies --- on a flat $T^3$ the gap depends
+on the torus moduli, on $H^3$ it is set by the curvature radius, and on
+$\mathbb{R}^3$ the spectrum is continuous with no gap at all. The claim that
+survives is the weaker one: within space forms of constant positive
+curvature the factor is fixed by the spatial dimension alone. The $\pi$
+comes from the closed-surface integration of (\ref{eq:o6}).
+
+Equation (\ref{eq:law}) is not a new derivation. It is the direct
+consequence, in a single line of algebra, of (\ref{eq:gcrit}) and
+(\ref{eq:o6}), both previously published. Its cosmological content lies in
+the recognition that $a_0$ is measured on galactic scales, through
+observables (rotation velocities, photometric masses) that involve no
+cosmological model, so that (\ref{eq:law}) delivers $H_0$ without invoking
+the CMB or the distance ladder \emph{as theoretical inputs}. Whether the
+distances used to convert those observables into physical units are
+themselves free of $H_0$ is a separate question, and \S4 shows that at
+present they are not.
+
+Two remarks. First, the factor $4\pi$ in (\ref{eq:o6}) is not a phenomenological
+fit to SPARC: it is the Gauss-theorem projection weight, structural to any
+scalar-field theory whose deep-MOND behaviour reduces to AQUAL. The observed
+agreement with SPARC at the $\sim 4\%$ level is therefore data-limited rather
+than fit-limited. Second, (\ref{eq:law}) is a hard prediction of the
+combined $\Lambda$-EG + AQUAL structure: it cannot be relaxed by choosing a
+different interpolating function, since $g_{\rm crit}$ and $a_0$ are both
+defined outside the interpolant, at the asymptotic Newtonian and deep-MOND
+boundaries respectively.
+
+\section{Empirical evaluation}
+
+The SPARC survey [Lelli, McGaugh \& Schombert 2016; McGaugh, Lelli \&
+Schombert 2016] measures $a_0$ from the radial-acceleration relation across
+approximately 150 disk galaxies, obtaining the canonical value
+\begin{equation}
+a_0 \;=\; (1.20 \pm 0.02_{\rm stat} \pm 0.24_{\rm sys})
+\times 10^{-10}\ {\rm m\,s^{-2}},
+\label{eq:a0sparc}
+\end{equation}
+where the systematic uncertainty is dominated by stellar mass-to-light
+modelling and inclination corrections. Substituting the central value into
+(\ref{eq:law}),
+\begin{equation}
+H_0 \;=\; \frac{\pi\sqrt{3}\times 1.20\times 10^{-10}}{2.998\times 10^{8}}\
+{\rm s^{-1}}
+\;=\; 67.21\ {\rm km\,s^{-1}\,Mpc^{-1}}.
+\label{eq:H0central}
+\end{equation}
+Propagating the SPARC systematic on $a_0$ directly through (\ref{eq:law})
+gives the interval $H_0 \in [53.8, 80.6]$ km\,s$^{-1}$\,Mpc$^{-1}$. Both
+reference determinations sit comfortably inside it: Planck ($67.4 \pm 0.5$)
+at $0.01\sigma_{\rm sys}$ and SH0ES ($73.5 \pm 0.7$) at $0.47\sigma_{\rm sys}$
+from the central value. We stress that the band does not discriminate between
+them at all --- the proximity of the central value to Planck carries no
+statistical weight on its own. The comparison is summarised in
+Table~\ref{tab:H0}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcl}
+\toprule
+Method & $H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$] & Anchor \\
+\midrule
+Planck 2018 CMB          & $67.4 \pm 0.5$   & recombination-epoch acoustic scale \\
+SH0ES 2024               & $73.5 \pm 0.7$   & Cepheid--SN Ia distance ladder \\
+\textbf{This letter} (Eq.~\ref{eq:law}) & $\mathbf{67.2}$ (central) & \textbf{galactic $a_0$ via SPARC} \\
+\midrule
+$\Delta$ vs.\ Planck  & $-0.3\%$ (central) & \\
+$\Delta$ vs.\ SH0ES   & $-8.6\%$ (central) & \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of $H_0$ determinations from three independent anchors.
+The $\Lambda$-EG prediction (this letter) uses no CMB data and no distance
+ladder; its input is the SPARC-canonical value of $a_0$. The wide statistical
+band from the SPARC systematic ($\pm 20\%$ on $a_0$ translates to $\pm 13.4$
+km\,s$^{-1}$\,Mpc$^{-1}$ on $H_0$) prevents statistical arbitration at this
+data quality; the coincidence of central values with Planck is nevertheless
+notable given the total independence of the two anchors.}
+\label{tab:H0}
+\end{table}
+
+The central value coincides with the Planck determination at a fractional
+precision of $3 \times 10^{-3}$; the same central value differs from SH0ES
+by $8.6\%$. Given that a shift of the $\Lambda$-EG central value from
+$67.21$ to the SH0ES central of $73.5$ would require $a_0$ to have a true
+value of $\sim 1.31 \times 10^{-10}$ m\,s$^{-2}$ (a $9\%$ excess over the SPARC
+central), and given the empirical precision expected from Gaia-anchored
+extended SPARC and LSST-era radial-acceleration-relation determinations
+[order-of-magnitude reduction in the $a_0$ systematic on a decade timescale],
+Eq.~(\ref{eq:law}) has the potential to become a sharp test. That potential
+is conditional on removing the circularity quantified in \S4: a tighter
+$a_0$ derived from the same distance mix would be a tighter number, not a
+more independent one.
+
+\section{The $H_0$ content of the $a_0$ measurement}
+\label{sec:selfconsistency}
+
+The argument of \S3 is only as independent of the distance ladder as the
+distances that enter $a_0$. We examined this directly and found that it is
+not independent at present data quality. The result is reported here rather
+than in a footnote because it bounds the claim the letter can make.
+
+Table~1 of SPARC [Lelli, McGaugh \& Schombert 2016] carries a distance-method
+flag $f_D$ whose first value is defined in the machine-readable header as
+\emph{``Hubble-Flow assuming $H_0 = 73$ km\,s$^{-1}$\,Mpc$^{-1}$ and
+correcting for Virgo-centric infall''}. All counts below are on the standard
+BTFR sample --- quality flag $Q \leq 2$ with a measured $V_{\rm flat}$,
+which is $129$ of the $175$ galaxies in the table, not on the full $175$.
+
+Not every non-flow method is equally free of $H_0$, and the distinction
+matters enough to be made explicit (Table~\ref{tab:fD}). We separate three
+tiers. \emph{Primary} distances (TRGB, Cepheids, SNe Ia; $33$ galaxies) are
+measured to the individual galaxy by a stellar or standard-candle indicator:
+these are redshift-independent in the NED-D sense. They are not free of the
+distance-ladder \emph{zero point} --- TRGB and Cepheid calibrations share
+anchors with SH0ES (NGC 4258, LMC eclipsing binaries, Gaia parallaxes) ---
+but no value of $H_0$ enters the inference. The \emph{cluster} tier (Ursa
+Major, $25$ galaxies) is ambiguous: SPARC assigns all $25$ members the
+\emph{same} distance, $18.0$ Mpc, so it is a membership assignment rather
+than an individual measurement, and the cluster distance itself rests on a
+Tully--Fisher calibration that carries a distance-scale dependence. The
+\emph{flow} tier ($71$ galaxies) is unambiguously $H_0$-dependent.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llrr}
+\toprule
+Tier & Method & $N$ & fraction \\
+\midrule
+flow    & Hubble flow ($D = v/H_0$ at $H_0 = 73$) & 71 & $55.0\%$ \\
+cluster & Ursa Major (all assigned $18.0$ Mpc)    & 25 & $19.4\%$ \\
+primary & Tip of the red giant branch             & 28 & $21.7\%$ \\
+primary & Cepheids                                &  3 & $2.3\%$ \\
+primary & Supernovae Ia                           &  2 & $1.6\%$ \\
+\midrule
+\multicolumn{2}{l}{$f$ (loose: flow only)}        & \textbf{71} & $\mathbf{55.0\%}$ \\
+\multicolumn{2}{l}{$f$ (strict: flow + cluster)}  & \textbf{96} & $\mathbf{74.4\%}$ \\
+\multicolumn{2}{l}{genuinely redshift-independent} & \textbf{33} & $25.6\%$ \\
+\bottomrule
+\end{tabular}
+\caption{Distance provenance of the standard SPARC BTFR sample ($129$
+galaxies). Depending on how the Ursa Major cluster tier is counted, between
+$55\%$ and $74\%$ of the sample carries distances that assume a value of
+$H_0$ --- and that assumed value ($73$) sits at the SH0ES end of the
+tension. Only $33$ galaxies have individually measured redshift-independent
+distances.}
+\label{tab:fD}
+\end{table}
+
+We carry both accountings forward, writing $f$ for the $H_0$-dependent
+fraction: $f = 0.550$ (loose) or $f = 0.744$ (strict). Nothing below depends
+on which is adopted.
+
+For a galaxy whose distance comes from the Hubble flow, $D \propto 1/H_0$.
+Baryonic masses are inferred photometrically, so $M \propto D^2$, while
+$V_{\rm flat}$ is a velocity and carries no distance dependence. Since
+$a_0 = V_{\rm flat}^4/(GM)$ in the BTFR normalisation,
+\begin{equation}
+a_0 \;\propto\; \frac{1}{M} \;\propto\; \frac{1}{D^2}
+\;\propto\; \left(H_0^{\rm assumed}\right)^{2}
+\qquad \text{on the } f_D = 1 \text{ sub-sample,}
+\label{eq:coupling}
+\end{equation}
+The exponent in (\ref{eq:coupling}) is exact rather than estimated, and it
+is worth seeing why. In the deep-MOND regime the interpolant gives
+$a^2 = a_0 a_N$, so that $V^4/r^2 = a_0 GM/r^2$ and \emph{the radius cancels
+identically}: the BTFR contains no length scale. The distance therefore
+enters through the baryonic mass alone --- $V_{\rm flat}$ being a Doppler
+velocity that carries no distance dependence --- and does so with the single
+power $M \propto D^2$. Rescaling every distance in the sample by a common
+factor $\lambda$ and recomputing returns $a_0 \propto \lambda^{-2}$ to five
+decimal places, as it must.
+
+A second structural observation sharpens what this does and does not
+indict. In $M = V^4/(G a_0)$ the powers of time cancel exactly
+($[V^4] = \rm m^4\,s^{-4}$, $[G a_0] = \rm m^4\,kg^{-1}\,s^{-4}$), so the
+BTFR carries no net time dimension: $H_0$, an inverse time, cannot enter the
+relation \emph{structurally}. It can enter only through the calibration of
+the data --- the conversion of fluxes into masses, which requires a
+distance. The circularity documented in this section is therefore a property
+of the present SPARC distance mix, not of Eq.~(\ref{eq:law}), and that is
+why the remedy is a better-selected sample rather than abandonment of the
+relation.
+
+Propagating (\ref{eq:coupling}) gives a sample-weighted sensitivity
+$\mathrm{d}\ln a_0 / \mathrm{d}\ln H_0 = 2f$, that is $1.10$ (loose) or
+$1.49$ (strict). Either way the coefficient exceeds unity: a $1\%$ error in
+the assumed $H_0$ moves $a_0$ by more than $1\%$. A shift of the assumed
+$H_0$ across the Planck--SH0ES range ($73 \to 67.4$, i.e.\ $-7.7\%$) moves
+$a_0$ by $-8\%$ to $-11\%$: the same size as the tension the relation is
+meant to probe.
+
+The consequence is that Eq.~(\ref{eq:law}) and the calibration of $a_0$ are
+not independent equations. Imposing both simultaneously,
+\begin{equation}
+H_0 \;=\; K\,g(H_0), \qquad
+g(H) \equiv f\left(\frac{H}{73}\right)^{2} + (1-f), \qquad
+K \equiv \frac{\pi\sqrt{3}\,a_0^{\rm SPARC}}{c} = 67.21,
+\label{eq:fixedpoint}
+\end{equation}
+gives roots at $H_0 = 43.1$ and $100.9$ km\,s$^{-1}$\,Mpc$^{-1}$ for
+$f = 0.550$, and at $21.6$ and $85.0$ for $f = 0.744$. None of the four is
+$67.2$. The value quoted in \S3 is the solution of (\ref{eq:law}) at
+\emph{fixed} $a_0$ --- that is, holding constant the very quantity that was
+calibrated against $H_0 = 73$.
+
+The conditioning of (\ref{eq:fixedpoint}) is more informative than its
+roots. Differentiating, the response of the inferred $H_0$ to the published
+$a_0$ is
+\begin{equation}
+\frac{\mathrm{d}\ln H_0}{\mathrm{d}\ln a_0}
+\;=\; \frac{K}{H_0}\,\frac{g(H_0)}{1 - K\,g'(H_0)},
+\qquad g'(H) = \frac{2fH}{73^2}.
+\label{eq:conditioning}
+\end{equation}
+For $f = 0.550$ the denominator vanishes at $H_0 = 72.0$ --- \emph{inside}
+the range under dispute. The response is $+13.7$ at $H_0 = 67.2$, $+32.5$ at
+$70$, and changes sign to $-68.5$ by $73$: the loop is singular precisely
+where the tension lives, and determines nothing. For $f = 0.744$ the
+singularity moves out to $53.3$ and the response is a finite $-3.4$ to
+$-2.5$ --- still large, and still \emph{negative}, meaning a higher
+published $a_0$ implies a \emph{lower} self-consistent $H_0$, the opposite
+of the naive reading of (\ref{eq:law}).
+
+Under either accounting the loop fails to determine $H_0$, and that failure
+--- not any particular root --- is the result of this section. We do not
+present (\ref{eq:fixedpoint}) as a competing determination: it uses a linear
+sample-weighted propagation, whereas the published $a_0$ comes from a global
+fit to the radial acceleration relation rather than from a median over
+Table~1, and the Virgo-centric infall correction is not a rigid rescaling.
+The roots are an order-of-magnitude statement about the size of the
+coupling, and that size is large enough to void the independence claim.
+
+We also attempted the direct test: recomputing $a_0$ separately on the two
+sub-samples. The $58$ galaxies with $H_0$-independent distances give a median
+$a_0$ that is $+9.5\%$ higher than the $71$ Hubble-flow galaxies. However,
+binning by $V_{\rm flat}$ shows the offset does not hold a consistent sign
+($+43\%$, $+18\%$, $-11\%$, $+1\%$ from the lowest to the highest mass bin),
+so it is degenerate with mass-dependent selection between the sub-samples
+and is \emph{not} a clean measurement of the $H_0$ bias. We report it as a
+bound on what Table~1 alone can resolve, not as a detection.
+
+The clean route is available and we state it as the next step rather than
+attempt it here: re-derive $a_0$ from the $58$ galaxies with
+$H_0$-independent distances, using the full rotation curves and mass
+modelling rather than the summary table. That determination would be
+genuinely ladder-independent, and Eq.~(\ref{eq:law}) applied to it would be
+the measurement this letter currently cannot make.
+
+\section{The orthogonal companion: $\sigma_\Phi(z)$ as a probe of $E(z)$}
+
+The BTFR flow derived from the interpolant $\mu(x) = x/\sqrt{1+x^2}$
+[Figueroa Torres 2026b, \S4] produces the intrinsic-scatter evolution
+\begin{equation}
+\sigma_\Phi(z) \;=\; \sigma_\Phi(0)\,
+\left(\frac{H(z)}{H_0}\right)^{\beta'(0)}
+\;=\; \sigma_\Phi(0)\, E(z)^{\beta'(0)},
+\label{eq:sigmaPhi}
+\end{equation}
+where $E(z) = H(z)/H_0 = \sqrt{\Omega_m(1+z)^3 + \Omega_\Lambda}$ and
+$\beta'(0) = -1$ for the standard interpolant of the theorem. The
+key observation is that $E(z)$ depends only on the density parameters
+$\Omega_m, \Omega_\Lambda$ and \emph{not} on $H_0$ itself: the identical
+$E(2) = 3.032$ is obtained for any $H_0 \in [65, 75]$ km\,s$^{-1}$\,Mpc$^{-1}$
+holding $\Omega_m = 0.315$ fixed. Equation (\ref{eq:sigmaPhi}) therefore
+measures the \emph{shape} of the expansion history, not its overall scale.
+
+\subsection*{Symmetry protection: why (\ref{eq:sigmaPhi}) is well-defined}
+
+The reconstruction (\ref{eq:sigmaPhi}) is not automatic. If the interpolating
+function's Taylor expansion at the deep-MOND fixed point had a non-vanishing
+quadratic coefficient $c_2$, the flow would become non-Lipschitz and
+$\sigma_\Phi(z)$ would collapse to zero exactly at finite flow time
+[Figueroa Torres 2026b, \S5], destroying the smooth $E(z)^{\beta'(0)}$
+dependence on which the reconstruction relies. The Appendix A.11 of that
+paper formalises this: $c_2 = 0$ is a knife-edge condition requiring
+symmetry protection, and the isotropy axiom of the theorem
+[Figueroa Torres 2026b, \S2] provides it exactly. The condition is moreover
+not imposed by hand: among the four simple projection gates whose
+solid-angle fractions generate the candidate interpolants, only the tilt
+gate $g\sin\theta > a_0\cos\theta$ yields a $\mu$ with vanishing quadratic
+coefficient [Figueroa Torres 2026b, \S3]. The reconstruction
+(\ref{eq:sigmaPhi}) therefore rests on a symmetry-protected structural
+identity with a geometric origin, not on a phenomenological choice. Any competing MOND-like framework
+whose interpolant does not enforce $c_2 = 0$ will not yield a smooth
+$\sigma_\Phi(z)$ curve, and its inability to do so will be visible in
+first-generation ELT/JWST-IFU measurements at $z \gtrsim 1$.
+
+\subsection*{Orthogonality with $a_0$}
+
+The two observables carry orthogonal information about the expansion
+history:
+\begin{center}
+\begin{tabular}{lcl}
+\toprule
+Observable & Anchor epoch & What it measures \\
+\midrule
+$a_0$ (SPARC) & $z \simeq 0$ & $H_0$ (scale) via Eq.~(\ref{eq:law}) \\
+$\sigma_\Phi(z)$ (ELT/JWST-IFU) & $z \simeq 1$--$2$ & $E(z) = H(z)/H_0$ (shape) via Eq.~(\ref{eq:sigmaPhi}) \\
+\bottomrule
+\end{tabular}
+\end{center}
+Combined, they reconstruct $H(z) = H_0 \cdot E(z)$ across the redshift range
+accessible to resolved kinematics, without invoking the CMB or the distance
+ladder at any step. The reconstruction is closed even without external
+priors on $\Omega_m$: two measurements of $\sigma_\Phi$ at distinct
+redshifts fix both the shape parameter and, through
+$E(z_1)/E(z_2)$, provide a consistency check against the assumed background
+cosmology.
+
+\section{Combined reconstruction and registered predictions}
+
+Table~\ref{tab:pred} lists the predictions of $\sigma_\Phi(z)$ for the three
+surviving interpolants of [Figueroa Torres 2026b, Table 1], under two
+cosmological scenarios: the Planck-consistent $\Lambda$CDM background
+($\Omega_m = 0.315, H_0 = 67.4$) and a SH0ES-consistent variant
+($\Omega_m = 0.30, H_0 = 73.5$). Because $E(z)$ is invariant under the
+choice of $H_0$ at fixed $\Omega_m$, the two scenarios differ only through
+the modest $\sim 0.015$ shift in $\Omega_m$ typically accompanying the
+higher-$H_0$ solutions. We anchor $\sigma_\Phi(0) = 0.07$ dex following the
+observed SPARC intrinsic scatter [Lelli et al.\ 2019].
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l c c c c c}
+\toprule
+Interpolant & $\beta'(0)$ &
+$\sigma_\Phi(z{=}0.5)$ &
+$\sigma_\Phi(z{=}1.0)$ &
+$\sigma_\Phi(z{=}2.0)$ &
+$\sigma_\Phi(z{=}4.0)$ \\
+\midrule
+\multicolumn{6}{l}{\emph{Planck-consistent} ($\Omega_m = 0.315$, $H_0 = 67.4$):} \\
+Standard $\mu = x/\sqrt{1+x^2}$
+  & $-1$    & $0.053$ & $0.039$ & $0.023$ & $0.011$ \\
+$\hat\mu$ entropic
+  & $-2$    & $0.040$ & $0.022$ & $0.008$ & $0.002$ \\
+$\tanh(x)$
+  & $-2/3$  & $0.058$ & $0.047$ & $0.033$ & $0.020$ \\
+\midrule
+\multicolumn{6}{l}{\emph{SH0ES-consistent} ($\Omega_m = 0.30$, $H_0 = 73.5$):} \\
+Standard $\mu = x/\sqrt{1+x^2}$
+  & $-1$    & $0.053$ & $0.040$ & $0.024$ & $0.011$ \\
+$\hat\mu$ entropic
+  & $-2$    & $0.041$ & $0.023$ & $0.008$ & $0.002$ \\
+$\tanh(x)$
+  & $-2/3$  & $0.059$ & $0.048$ & $0.034$ & $0.021$ \\
+\bottomrule
+\end{tabular}
+\caption{Registered predictions of $\sigma_\Phi(z)$ [dex] under two
+cosmological scenarios. The insensitivity to $H_0$ at fixed $\Omega_m$
+(compare rows across the two blocks) is the orthogonality property of \S5.
+The dominant discriminator is $\beta'(0)$: for a target error budget of
+$\pm 0.010$ dex per redshift bin, the standard interpolant is separable from
+$\hat\mu$ near $z \simeq 1.2$ and from $\tanh$ near $z \simeq 2.3$ [Figueroa
+Torres 2026b, Fig.~1]. Values computed at fixed $\sigma_\Phi(0) = 0.07$ dex.
+Registered before ELT/JWST-IFU deployment.}
+\label{tab:pred}
+\end{table}
+
+The insensitivity of $\sigma_\Phi(z)$ predictions to the choice of $H_0$
+under fixed $\Omega_m$ is the direct expression of the orthogonality
+established in \S5: the shape measurement does not carry scale information,
+and vice versa. What the shape measurement \emph{does} carry is
+discriminating power between models that resolve the Hubble tension through
+modifications of $E(z)$. Early-dark-energy models, for instance, modify
+$E(z)$ at $z \gtrsim 1000$ but leave the late-time expansion essentially
+untouched; models that modify late-time dark-energy dynamics predict
+deviations at $z \lesssim 1$. A measurement of $\sigma_\Phi(z=1.5)$ at
+$\pm 0.005$ dex precision --- within reach of ELT/HARMONI resolved
+kinematics with SED-fit baryonic masses --- would separate these classes at
+the $\gtrsim 3\sigma$ level, independently of any determination of the CMB
+acoustic scale.
+
+\section{Epistemological disclosure}
+
+We are explicit about what has been fit, what has been derived, and what
+remains open.
+
+\emph{Fit to data:} none of the numbers in this letter. The prefactor
+$\pi\sqrt{3}$ in Eq.~(\ref{eq:law}) is a pure geometric constant; the
+factor $4\pi$ in Eq.~(\ref{eq:o6}) is the Gauss-theorem projection weight,
+structural to the AQUAL embedding and independent of the choice of
+interpolating function. The value of $a_0$ entering
+Eq.~(\ref{eq:H0central}) is the SPARC-canonical determination. It is
+\emph{not}, however, independent of $H_0$: as quantified in \S4, $55\%$ of
+the sample carries Hubble-flow distances computed at $H_0 = 73$, coupling
+$a_0$ to the assumed expansion rate with sensitivity
+$\mathrm{d}\ln a_0/\mathrm{d}\ln H_0 \simeq 1.1$. An earlier version of this
+letter asserted that independence; the assertion was wrong and is retracted
+here.
+
+\emph{Branch ambiguity:} Eq.~(\ref{eq:law}) presupposes that the
+acceleration scale tracks the instantaneous expansion rate,
+$a_0 \propto H(z)$. This is one of three readings of the framework's scale
+relation. The covariant reading $a_0 \propto \sqrt{R(z)}$ is excluded
+independently of the present data, since $R = 8\pi G(\rho - 3p)$ vanishes
+exactly in the radiation era while the expansion $\theta = 3H$ does not
+[Figueroa Torres 2026, \S7.6]. The third reading, $a_0 \propto \sqrt{\Lambda}$
+(constant in $z$), is not excluded, and it would make $\Lambda$-EG
+indistinguishable from MOND in redshift.
+
+Each branch predicts a different $a_0$ at fixed $H_0$, so each inverts to a
+different $H_0$ at fixed $a_0$. Evaluated at $H_0 = 67.4$ the three
+predictions are $a_0^{\rm A} = 1.203$, $a_0^{\rm B} = 1.051$ and
+$a_0^{\rm C} = 0.995$, in units of $10^{-10}\,\rm m\,s^{-2}$ [Figueroa
+Torres 2026, \S7.6]. Since each branch has $a_0 \propto H_0$ at fixed
+$\Omega_\Lambda$, inverting on the observed $a_0 = 1.20$ gives
+\begin{equation}
+H_0^{\rm branch} \;=\; 67.4 \times \frac{1.20}{a_0^{\rm branch}/10^{-10}}
+\;=\; 67.2\ (\text{A}), \quad 77.0\ (\text{B}), \quad 81.3\ (\text{C}),
+\label{eq:branches}
+\end{equation}
+an ambiguity of $21\%$, larger than the $8.4\%$ tension being probed. The
+discrepancy of each branch is properly quoted in $a_0$, where the $20\%$
+systematic lives: branch C misses the central value by
+$(1.20-0.995)/0.24 = 0.85\sigma_{\rm sys}$ and branch B by
+$0.62\sigma_{\rm sys}$. (Quoting branch C's offset against the
+\emph{branch-A} band of $\pm 13.4$ would give a different and incorrect
+$1.05\sigma$: that band is $\pi\sqrt{3}\,\sigma_{a_0}/c$, the propagation of
+$\sigma_{a_0}$ through branch A's constant, and does not apply to a
+displacement generated by a different branch.) We note that
+$0.85\sigma_{\rm sys}$ is weak grounds for exclusion. The reader should
+treat $67.2$ as conditional on the $a_0 \propto H(z)$ branch.
+
+We stress that (\ref{eq:branches}) is a different calculation from the
+self-consistency roots of \S4 and the two should not be conflated: the
+former asks which $H_0$ reproduces the observed $a_0$ under each scale
+relation, the latter asks which $H_0$ is consistent with a dataset
+calibrated at $H_0 = 73$. Setting $f = 1$ in (\ref{eq:fixedpoint}), for
+instance, returns $73^2/K = 79.3$, which is neither $81.3$ nor a branch
+statement at all.
+
+\emph{Structural inputs:} the framework paper adopts the AQUAL embedding
+as its scalar sector; the derivation of AQUAL from a more fundamental
+principle within the covariant action of $\Lambda$-EG remains as Open
+Problem 6 [Figueroa Torres 2026, \S13]. This does not affect the present
+letter, since Eq.~(\ref{eq:o6}) holds within AQUAL as a mathematical
+consequence, but it means the ultimate justification of Eq.~(\ref{eq:law})
+inherits whatever justification AQUAL receives from future work.
+
+\emph{Observational inputs:} the SPARC value of $a_0$ carries a $\sim 20\%$
+systematic uncertainty at present. This uncertainty, propagated linearly
+through Eq.~(\ref{eq:law}), produces the wide $\pm 13.4$ km\,s$^{-1}$\,Mpc$^{-1}$
+band on $H_0$. Statistical arbitration of the Hubble tension will therefore
+require the SPARC systematic to be reduced to $\lesssim 5\%$; the pathway is
+through improved stellar-mass modelling (Gaia parallax priors), tighter
+inclination priors from resolved kinematics, and larger samples (extended
+SPARC, LSST-era radial-acceleration relation catalogues). Reducing the
+systematic is necessary but not sufficient: the distance provenance of \S4
+must be addressed separately, since it is a bias rather than a variance and
+does not shrink with sample size.
+
+\emph{Ex-ante predictions:} the numerical entries of Table~\ref{tab:pred},
+registered on the deposition date of this letter, will be compared against
+ELT/HARMONI IFU measurements of resolved BTFR kinematics at
+$z \simeq 1$--$3$ when they become available. Should the observed
+$\sigma_\Phi(z)$ deviate from the standard-interpolant prediction under
+either cosmological scenario, one or more of the following will be
+falsified: the isotropy axiom of the theorem, the AQUAL embedding, the
+$\Lambda$CDM background, or the assumption that $a_0$ is redshift-invariant
+in the observer frame.
+
+\emph{What we do not claim:} we do not claim to have resolved the Hubble
+tension, and we do not claim a third independent determination of $H_0$.
+Two things stand in the way, and we have quantified both: the width of the
+SPARC systematic on $a_0$ precludes statistical arbitration at the level
+demanded by the $5\sigma$ CMB--distance-ladder discrepancy, and the
+distance provenance of the sample (\S4) prevents the present-epoch channel
+from being ladder-independent at all; the second is a bias, and \S4 shows
+the resulting loop is ill-conditioned in exactly the range under dispute.
+We claim, more modestly: that
+$\Lambda$-EG fixes a rigid algebraic relation between $a_0$ and $H_0$ with
+no free parameters; that evaluating it on current data returns a value
+$0.3\%$ from Planck, which is suggestive but cannot be counted as evidence
+until the circularity is removed; that the route to removing it is concrete
+and identified (the $33$ galaxies with individually measured
+redshift-independent distances); and that the
+orthogonal companion (\S5), being a ratio and therefore immune to the
+distance problem, opens a program to reconstruct the \emph{shape} of $H(z)$
+from galactic dynamics alone.
+
+\section{Discussion and outlook}
+
+The $a_0$--$H_0$ coincidence has been noticed in the MOND literature since
+at least Milgrom (1999), who observed that $a_0 \sim cH_0$ in
+order-of-magnitude terms and interpreted it through the de Sitter Unruh
+temperature. Milgrom (2009) sharpened the connection considerably, deriving
+the deep-MOND limit from space-time scale invariance and conjecturing that
+local gravitational physics would take exactly the deep-MOND form in an
+exact de Sitter universe, on the grounds that the isometry group of $dS_4$
+and the symmetry group of the deep-MOND field equation are both $SO(4,1)$.
+The present letter is agnostic on that mechanism: Eq.~(\ref{eq:law}) is used
+here only as an algebraic relation between two measured scales.
+Klinkhamer \& Kopp (2011) derived the exact relation
+$a_0 = 4\pi (c/\hbar)\, k_B T_{\min}$ from entropic gravity with a minimum
+temperature. The present letter differs from those in two respects.
+First, the prefactor $\pi\sqrt{3}$ in Eq.~(\ref{eq:law}) is derived, not
+observed: it follows from the specific de Sitter spectral geometry of the
+framework paper [Figueroa Torres 2026] combined with the AQUAL embedding.
+Second, and more importantly, the coincidence is complemented here by the
+orthogonal $\sigma_\Phi(z)$ observable, which promotes a numerical
+coincidence into a two-channel reconstruction program.
+
+The path forward is observational. Four developments would sharpen this
+letter's contribution to the tension debate, of which the first is
+prerequisite to the rest:
+(0) re-derivation of $a_0$ restricted to galaxies with redshift-independent
+distances --- $33$ have individually measured ones in SPARC, $58$ if the
+Ursa Major cluster tier is admitted (\S4) --- which is what would convert
+Eq.~(\ref{eq:law}) from a consistency relation into a measurement;
+(i) reduction of the SPARC systematic on $a_0$ to $\lesssim 5\%$ through
+Gaia-anchored mass modelling on extended galaxy samples;
+(ii) first-epoch measurements of $\sigma_\Phi(z)$ at $z \simeq 1$--$2$ with
+ELT/HARMONI resolved kinematics, tested against the entries of
+Table~\ref{tab:pred};
+(iii) independent theoretical work on the AQUAL sector of the framework,
+either sharpening or falsifying the derivation of (\ref{eq:o6}) from more
+fundamental principles.
+
+We stress the falsifiability of the path. Eq.~(\ref{eq:law}) is a rigid
+prediction: any determination of $a_0$ on $H_0$-independent distances that
+lies more than $\sim 3\sigma$ below (\ref{eq:a0sparc}) forces $\Lambda$-EG
+into tension with Planck; any such determination more than $\sim 3\sigma$
+above forces it into tension with SH0ES. The qualifier is essential --- on
+the present distance mix the test is partly self-referential, and tightening
+the error bars alone would not make it decisive. Neither outcome is
+currently accessible with SPARC data quality, but both will be within a
+decade. Eq.~(\ref{eq:sigmaPhi}) carries no such caveat, being a ratio in
+which $H_0$ cancels identically: any observed $\sigma_\Phi(z=1.5) \notin [0.012, 0.040]$
+dex (the union of the surviving-interpolant predictions of
+Table~\ref{tab:pred}, computed at $\sigma_\Phi(0)=0.07$ dex from SPARC:
+$\hat\mu$-entropic $0.0125$, standard $0.0296$, tanh $0.0394$)
+falsifies the combined framework.
+
+\section*{Data availability}
+
+All numerical evaluations are reproducible from the archived scripts
+{\tt H0\_from\_a0.py} (Eq.~\ref{eq:law} and Table~\ref{tab:H0}),
+{\tt sigmaPhi\_predictions.py} (Table~\ref{tab:pred}) and
+{\tt a0\_H0\_selfconsistency.py} (\S4, Table~\ref{tab:fD} and
+Eq.~\ref{eq:fixedpoint}). All three are deterministic and require only the
+Python standard library; the third additionally reads the machine-readable
+SPARC Table~1 ({\tt SPARC\_Lelli2016c.mrt}), archived alongside them. The
+symbolic verification of the fixed-point structure underlying
+Eq.~(\ref{eq:sigmaPhi}) is in {\tt sensitivity.py} (Appendix A.11 of the
+companion paper, reproduced here), which requires SymPy. All symbolic
+identities used in \S2 and \S5 have been verified in the archived scripts of
+the companion papers [Figueroa Torres 2026, 2026b].
+
+\section*{Funding and competing interests}
+
+This work received no external funding. The author declares no competing
+interests.
+
+\section*{References}
+
+\begin{itemize}\itemsep2pt
+\item Bekenstein, J., Milgrom, M.\ 1984, ApJ 286, 7
+\item Figueroa Torres, J.\,P.\ 2026, \emph{Lambda EG: Emergent Gravitational
+  Coherence and Galactic Dynamics Without Particle Dark Matter}, Zenodo
+  preprint, doi:10.5281/zenodo.19784004
+\item Figueroa Torres, J.\,P.\ 2026b, \emph{A geometric characterization of
+  the standard MOND interpolating function: $\mu(x) = x/\sqrt{1+x^2}$ as
+  the isotropic distribution of $\cot\theta$}, Zenodo preprint (ORCID
+  0009-0005-5297-8777)
+\item Klinkhamer, F.\,R., Kopp, M.\ 2011, Mod.\ Phys.\ Lett.\ A 26, 2783
+  [arXiv:1104.2022]
+\item Lelli, F., McGaugh, S., Schombert, J.\ 2016, AJ 152, 157
+\item Lelli, F., McGaugh, S., Schombert, J., Pawlowski, M.\ 2019, ApJ 872, 25
+\item McGaugh, S., Lelli, F., Schombert, J.\ 2016, Phys.\ Rev.\ Lett.\ 117,
+  201101
+\item Milgrom, M.\ 1999, Phys.\ Lett.\ A 253, 273 [arXiv:astro-ph/9805346]
+\item Milgrom, M.\ 2009, ApJ 698, 1630, \emph{The MOND limit from space-time
+  scale invariance} [arXiv:0810.4065]
+\item Planck Collaboration 2020, A\&A 641, A6 [arXiv:1807.06209]
+\item Riess, A.\,G.\ et al.\ 2024, ApJ 977, 120 [JWST-anchored SH0ES update]
+\end{itemize}
+
+\end{document}
