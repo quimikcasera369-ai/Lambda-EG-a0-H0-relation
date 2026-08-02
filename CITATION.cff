@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The a0-H0 relation in Lambda-EG: a consistency test and its distance-ladder circularity"
+authors:
+  - family-names: "Figueroa Torres"
+    given-names: "J. P."
+    orcid: "https://orcid.org/0009-0005-5297-8777"
+version: "1.0.0"
+date-released: "2026-08-02"
+license: CC-BY-4.0
+abstract: >-
+  The Lambda-EG framework fixes two acceleration scales in a rigid geometric
+  relation, whose immediate consequence is H0 = pi*sqrt(3)*a0/c. Evaluated on the
+  SPARC-canonical a0 this returns 67.21 km/s/Mpc, within 0.3 percent of Planck.
+  We show that this cannot be read as an independent determination: between 55
+  and 74 percent of the standard SPARC sample carries distances computed under an
+  assumed H0 = 73 km/s/Mpc, propagating into a0 with sensitivity exceeding unity.
+  Imposing the relation and the calibration simultaneously yields a loop that is
+  singular at H0 = 72 and determines no value of H0. We identify the clean route:
+  the 33 SPARC galaxies with individually measured redshift-independent
+  distances. The companion observable sigma_Phi(z), being a ratio, is immune.
+keywords:
+  - Hubble tension
+  - MOND
+  - emergent gravity
+  - baryonic Tully-Fisher relation
+  - distance-ladder systematics
