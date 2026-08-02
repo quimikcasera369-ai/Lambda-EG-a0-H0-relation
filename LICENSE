@@ -1,0 +1,31 @@
+Copyright (c) 2026 J. P. Figueroa Torres
+
+TEXT, FIGURES AND DOCUMENTATION (the .tex/.pdf letter, README, appendix)
+are licensed under the Creative Commons Attribution 4.0 International
+License (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/
+
+SOURCE CODE (the .py scripts) is licensed under the MIT License:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+THIRD-PARTY DATA: the file SPARC_Lelli2016c.mrt is machine-readable Table 1 of
+Lelli, McGaugh & Schombert (2016), AJ 152, 157, distributed by the SPARC
+project (http://astroweb.cwru.edu/SPARC/). It is the property of its authors,
+is included here solely for reproducibility, and is not covered by the
+licenses above.
