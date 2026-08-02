@@ -1,0 +1,101 @@
+% =============================================================================
+% Appendix A.11 for Letter v4 — sensitivity analysis
+% To be added after the current Appendix A.10 (Reproducibility)
+% Requires: amsmath, amssymb, booktabs
+% =============================================================================
+
+\subsection*{A.11 Sensitivity of the fixed-point topology to Taylor coefficients}
+\label{app:sensitivity}
+
+Since the criterion $c_2 = 0$ is derived from the leading behaviour of $\beta$
+near the fixed point, it is natural to ask how the topology of the fixed
+point responds to perturbations in each Taylor coefficient of $\mu$. Keeping
+$c_2$, $c_3$, $c_4$, $c_5$ generic in the expansion $\mu(u) = u + c_2 u^2 +
+c_3 u^3 + c_4 u^4 + c_5 u^5 + O(u^6)$ and expanding $\beta(\Phi)$ to
+$O(\Phi^2)$ gives, by direct substitution into~(8) and the change of
+variable $u^2 = \Phi(2+\Phi)$,
+\begin{align}
+\beta(\Phi) &= \frac{c_2}{\sqrt{2}}\sqrt{\Phi}
+             \;+\; \Bigl(2c_3 - \tfrac{5}{2}c_2^2\Bigr)\Phi \notag \\
+            &\quad\;+\; \frac{\sqrt{2}}{8}\bigl(38\,c_2^3 - 64\,c_2 c_3
+                    + c_2 + 24\,c_4\bigr)\,\Phi^{3/2} \notag \\
+            &\quad\;+\; \bigl(-\tfrac{65}{4}c_2^4 + 42\,c_2^2 c_3
+                    - \tfrac{5}{4}c_2^2 - 22\,c_2 c_4
+                    - 12\,c_3^2 + c_3 + 8\,c_5\bigr)\,\Phi^2
+                    \;+\; O(\Phi^{5/2}).
+\label{eq:full-expansion}
+\end{align}
+The distribution of Taylor coefficients across powers of $\Phi$ is
+informative. $c_2$ enters at every order and its vanishing controls the
+leading singular power; $c_3$ enters starting at $\Phi$ and fixes
+$\beta'(0)$ when $c_2 = 0$; $c_4$ enters starting at $\Phi^{3/2}$;
+$c_5$ enters starting at $\Phi^2$. The topology of the fixed point is
+therefore controlled hierarchically:
+
+\begin{itemize}
+\item \textbf{$c_2$ is a knife-edge condition.} A perturbation $c_2 \to
+\delta$ with $\delta \neq 0$, however small, introduces a $\sqrt{\Phi}$
+term that dominates the linear term arbitrarily close to $\Phi = 0$. The
+qualitative behaviour of the flow changes discontinuously: finite-time
+collapse for $\delta < 0$, unbounded departure for $\delta > 0$. There is
+no smooth deformation of the linear-attractor topology into the collapse
+topology: the transition is a boundary in function space, not a limit.
+
+\item \textbf{$c_3$ controls $\beta'(0)$ smoothly, but its sign controls
+the topology.} With $c_2 = 0$, one has $\beta'(0) = 2c_3$. A perturbation
+$c_3 \to c_3 + \varepsilon$ preserves the linear-attractor character as
+long as $\mathrm{sign}(c_3 + \varepsilon) = \mathrm{sign}(c_3)$. For
+$c_3 < 0$ (attractive; the case of all analytic-flow entries in Table 1)
+the topology is preserved for perturbations bounded by $|c_3|$; larger
+perturbations invert the sign and the fixed point becomes repulsive. The
+degenerate case $c_3 = 0$, realised by $\mu_\alpha(x) = x/(1+x^\alpha)^{1/\alpha}$
+for $\alpha \geq 3$, produces $\beta'(0) = 0$: a marginal fixed point in
+which the linear term of the flow vanishes and the approach is
+quadratic at best. The $\mu_\alpha$ entries in Table 1 with $\alpha \geq 3$
+therefore satisfy $c_2 = 0$ but do not qualify as linear attractors in
+the strict sense.
+
+\item \textbf{$c_4$ and $c_5$ do not affect the topology.} With $c_2 = 0$,
+$c_4$ enters only the $\Phi^{3/2}$ coefficient and $c_5$ only the
+$\Phi^2$ coefficient; neither modifies $\beta'(0)$. The value of $c_5$
+enters $\kappa$ through the linear combination $c_3 - 12c_3^2 + 8c_5$
+(the $\Phi^2$ coefficient of $\beta$), so $\kappa$ is sensitive to $c_5$
+quantitatively but not qualitatively.
+\end{itemize}
+
+\paragraph{Observable sensitivity.} For an interpolating function with
+$c_2 = 0$, the BTFR scatter evolves as $\sigma_\Phi(z) = \sigma_\Phi(0)
+(H(z)/H_0)^{2c_3}$ under the linear flow, so
+\begin{equation}
+\frac{\partial \ln \sigma_\Phi(z)}{\partial c_3}
+\;=\; 2\,\ln\!\left(\frac{H(z)}{H_0}\right),
+\label{eq:sens-c3}
+\end{equation}
+which at $z = 2$ with $\Omega_m = 0.3$ evaluates to $\simeq 2.17$. A 10\%
+perturbation of $c_3$ (e.g., $c_3 = -1/2 \to -0.55$) produces a $\sim 11\%$
+shift in $\sigma_\Phi(z = 2)$, comparable to but not dominant over the
+forecast band $\pm 0.010$~dex of Figure~1. Sensitivity to $c_4$ enters at
+second order in $\Phi_0$ and is negligible for the BTFR scatter over
+the redshift range considered; sensitivity to $c_5$ enters through
+$\kappa$ and modifies the subleading (curvature) behaviour of the flow.
+
+\paragraph{Conceptual implication.} The knife-edge nature of $c_2 = 0$
+implies that any microphysical derivation of $\mu$ must implement this
+vanishing as a consequence of a symmetry or structural principle, rather
+than a numerical coincidence. Approximate cancellation is not sufficient:
+a coefficient $c_2 = \varepsilon$ for any $\varepsilon \neq 0$ produces
+the qualitatively wrong fixed-point behaviour, with finite-time collapse
+at $\lambda_* = 2\sqrt{2\Phi_0}/|\varepsilon| \sim 1/|\varepsilon|$ — a
+timescale that lies within the observable redshift range for any
+$|\varepsilon| \gtrsim 10^{-1}$. In the present framework the protection
+is direct: Axioms 1--2 (isotropy plus the tilt criterion) imply
+$\mu = x/\sqrt{1+x^2}$ exactly, and $c_2 = 0$ is a consequence of
+rotational symmetry of the underlying angular ensemble. In other
+published derivations the protection is different but must equally exist:
+in Klinkhamer \& Kopp (2011) it arises from the entropic structure of the
+minimum-temperature vacuum; in Berezhiani \& Khoury (2015) it is
+preserved at the level of the MONDian phonon action $P(X) \propto
+X\sqrt{|X|}$. Any future proposal of a MOND interpolating function should
+identify the principle from which $c_2 = 0$ is inherited; absent such a
+principle, the interpolant is fine-tuned in a way that first-generation
+$\sigma_\Phi(z)$ measurements at $z \gtrsim 1$ will surface.
